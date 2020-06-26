@@ -1,0 +1,14 @@
+[Unit]
+Description=Zabbix cleaner service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/bin/python3 /root/SDS/zabbix_cleaner/zabbix_cleaner.py
+
+[Install]
+WantedBy=multi-user.target

@@ -1,7 +1,5 @@
 import os
-import system
 import mysql.connector
-import mysql.Error
 
 try:
     print("Zabbix cleaner - Inicializando a conexão...")
