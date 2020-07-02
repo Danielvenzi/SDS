@@ -5,9 +5,9 @@ import datetime
 
 def godata_get_and_save():
 
-    os.system("scp root@10.20.10.113:/home/centeias/godata-backup-service/dump /infra-centeias/backups/godata/")
+    os.system("bash /infra-centeias/backups/godata/godata_server.sh")
     now = datetime.datetime.now()
-    os.system("tar -zcvf {0}{1}-{2}.tar.gz /infra-centeias/backups/godata/dump".format(now.day,now.hour,now.year))
+    os.system("mv /infra-centeias/backups/godata/dump.tar.gz /infra-centeias/backups/godata/{0}-{1}-{2}.tar.gz".format(now.day,now.hour,now.year))
 
 if __name__ == "__main__":
 

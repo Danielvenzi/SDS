@@ -5,6 +5,7 @@ import time
 def godata_dump():
 
     os.system("cd /home/centeias/godata-backup-service ; rm -rf ./dump/ ; mongodump")
+    os.system("rm -f /var/www/html/dump.tar.gz ; tar -zcvf /var/www/html/dump.tar.gz /home/centeias/godata-backup-service/dump")
 
 if __name__ == "__main__":
 
