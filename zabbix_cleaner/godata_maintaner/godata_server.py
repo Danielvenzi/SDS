@@ -7,7 +7,7 @@ def godata_get_and_save():
 
     os.system("bash /infra-centeias/backups/godata/godata_server.sh")
     now = datetime.datetime.now()
-    os.system("mv /infra-centeias/backups/godata/dump.tar.gz /infra-centeias/backups/godata/{0}-{1}-{2}.tar.gz".format(now.day,now.hour,now.year))
+    os.system("mv /infra-centeias/backups/godata/dump.tar.gz /infra-centeias/backups/godata/{0}-{1}-{2}.tar.gz".format(now.day,now.moth,now.year))
 
 if __name__ == "__main__":
 

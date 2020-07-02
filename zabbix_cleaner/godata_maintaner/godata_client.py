@@ -4,9 +4,9 @@ import time
 
 def godata_dump():
 
-    os.system("cd /home/centeias/godata-backup-service ; rm -rf ./dump/ ; mongodump")
-    os.system("rm -f /var/www/html/dump.tar.gz ; tar -zcvf /var/www/html/dump.tar.gz /home/centeias/godata-backup-service/dump")
-
+    os.system("systemctl stop godata ; sleep 10 ; cd /godata-bckp ; rm -rf ./dump/ ; mongodump")
+    os.system("rm -f /var/www/html/dump.tar.gz ; tar -zcvf /var/www/html/dump.tar.gz /godata-bckp/dump")
+    os.system("systemctl start godata")
 if __name__ == "__main__":
 
     schedule.every().monday.at("03:00").do(godata_dump)

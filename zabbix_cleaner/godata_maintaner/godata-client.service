@@ -1,0 +1,14 @@
+[Unit]
+Description=Godata client backup service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/python3 /infra-centeias/backups/godata/godata_server.py
+
+[Install]
+WantedBy=multi-user.target
